@@ -62,6 +62,8 @@
     [self.examples addObject:example4];
     
     [_startMike bringSubviewToFront:_progressView];
+    
+    [self startRecording:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,7 +102,7 @@
     // 3 - Display image picker    
     [controller presentViewController:cameraUI animated:YES completion:nil];
     
-    [controller performSelector:@selector(dismissImagePicker:) withObject:cameraUI afterDelay:180.0];
+    [controller performSelector:@selector(dismissImagePicker:) withObject:cameraUI afterDelay:18.0];
     
     return YES;
 }
@@ -126,7 +128,7 @@
         }
     }
     
-    [self dismissViewControllerAnimated:picker completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)video:(NSString*)videoPath didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo {
@@ -141,9 +143,34 @@
     }
 }
 
+- (void)sendVideoThroughEmail:(NSData *)videoData
+{
+    MFMailComposeViewController *mailsend = [[MFMailComposeViewController alloc] init];
+    mailsend.mailComposeDelegate = self;
+    [mailsend setSubject:@"Video from pic trap"];
+    
+    // Fill out the email body text
+    NSString *victimInfoString = @"Hello PFA the video captured in Pic Trap";
+    
+    NSString *emailBody = [NSString stringWithFormat:@"%@\n", victimInfoString];
+    
+    emailBody = [emailBody stringByReplacingOccurrencesOfString:@"(null)" withString:@""];
+    
+    [mailsend setMessageBody:emailBody isHTML:NO];
+    
+    [mailsend setToRecipients:[NSArray arrayWithObject:@"mobile@latriallawyers.com"]];
+    
+    NSData *data = videoData;
+    
+    [mailsend addAttachmentData:data mimeType:@"video/mp4" fileName:@"Video"];
+    
+    
+    [self presentViewController:mailsend animated:YES completion:nil];
+}
+
 - (void)dismissImagePicker:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:picker completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)timerFired:(NSTimer *)timer
@@ -163,6 +190,18 @@
     
 }
 
+#pragma mark MFMailComposeViewControllerDelegate
 
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+	NSLog(@"Mail delegate...");
+	[controller dismissViewControllerAnimated:YES completion:nil];
+	
+	if(result==MFMailComposeResultSent)
+	{
+		UIAlertView *mailAlertV=[[UIAlertView alloc]initWithTitle:@"E-Mail" message:@"Your mail sent successfully!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[mailAlertV show];
+	}
+}
 
 @end

@@ -104,6 +104,7 @@
 		EAE1FF2B1916412A005A14AA /* pintrap_navigationbar_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE1FF261916412A005A14AA /* pintrap_navigationbar_logo@2x.png */; };
 		EAE1FF2C1916412A005A14AA /* red_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE1FF271916412A005A14AA /* red_bar@2x.png */; };
 		EAE1FF2D1916412A005A14AA /* signup_man_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE1FF281916412A005A14AA /* signup_man_icon.png */; };
+		EAECE339196D7C3D008A58E9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAECE338196D7C3D008A58E9 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +238,7 @@
 		EAE1FF261916412A005A14AA /* pintrap_navigationbar_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pintrap_navigationbar_logo@2x.png"; sourceTree = "<group>"; };
 		EAE1FF271916412A005A14AA /* red_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_bar@2x.png"; sourceTree = "<group>"; };
 		EAE1FF281916412A005A14AA /* signup_man_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup_man_icon.png; sourceTree = "<group>"; };
+		EAECE338196D7C3D008A58E9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAECE339196D7C3D008A58E9 /* MessageUI.framework in Frameworks */,
 				EA3835B7193F767900B4ED3B /* QuartzCore.framework in Frameworks */,
 				EA3835B5193F767000B4ED3B /* MobileCoreServices.framework in Frameworks */,
 				EA3835B3193F766100B4ED3B /* MediaPlayer.framework in Frameworks */,
@@ -482,6 +485,7 @@
 		EABB1B481912B59300C96AD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAECE338196D7C3D008A58E9 /* MessageUI.framework */,
 				EA3835B6193F767900B4ED3B /* QuartzCore.framework */,
 				EA3835B4193F766F00B4ED3B /* MobileCoreServices.framework */,
 				EA3835B2193F766100B4ED3B /* MediaPlayer.framework */,

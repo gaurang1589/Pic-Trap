@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "THCircularProgressView.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface homeViewController : ViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface homeViewController : ViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *progressView;
 @property (weak, nonatomic) IBOutlet UIButton *startMike;
 - (IBAction)startRecording:(id)sender;
