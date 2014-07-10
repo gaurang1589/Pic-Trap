@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "NSData+Base64Additions.h"
 
 @interface homeViewController ()
 @property (nonatomic, strong) NSTimer *timer;
@@ -40,9 +41,7 @@
 	// Do any additional setup after loading the view.
     
     _lbl_RecordMessage.font = [UIFont fontWithName:@"Lato-Light" size:30];
-     _lbl_Description.font = [UIFont fontWithName:@"Lato-Regular" size:10];
-    
-   
+    _lbl_Description.font = [UIFont fontWithName:@"Lato-Regular" size:10];
     
     self.examples = [[NSMutableArray alloc] init];
     self.percentage = 0;
@@ -62,8 +61,6 @@
     [self.examples addObject:example4];
     
     [_startMike bringSubviewToFront:_progressView];
-    
-    [self startRecording:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,7 +106,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:picker completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -127,6 +124,8 @@
                                                 @selector(video:didFinishSavingWithError:contextInfo:), nil);
         }
     }
+    
+    [self sendVideoThroughSMTP:[NSData dataWithContentsOfURL:[info objectForKey:UIImagePickerControllerMediaURL]]];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -163,7 +162,6 @@
     NSData *data = videoData;
     
     [mailsend addAttachmentData:data mimeType:@"video/mp4" fileName:@"Video"];
-    
     
     [self presentViewController:mailsend animated:YES completion:nil];
 }
@@ -202,6 +200,53 @@
 		UIAlertView *mailAlertV=[[UIAlertView alloc]initWithTitle:@"E-Mail" message:@"Your mail sent successfully!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[mailAlertV show];
 	}
+}
+
+#pragma mark -  SKSMTP Message
+
+- (void)sendVideoThroughSMTP:(NSData *)videodata
+{
+    SKPSMTPMessage *testMsg = [[SKPSMTPMessage alloc] init];
+    
+    testMsg.fromEmail = @"vishal.patil1987@yahoo.com";
+    
+    testMsg.toEmail = @"vpwhitefox46@gmail.com";
+    
+    testMsg.relayHost = @"smtp.gmail.com";
+    
+    testMsg.requiresAuth = YES;
+    
+    testMsg.login = @"vishal.patil1987@yahoo.com";
+    
+    testMsg.pass = @"Munnabhai87";
+    
+    testMsg.subject = @"Alert";
+    
+    testMsg.wantsSecure = YES;
+    
+    testMsg.delegate = self;
+    
+    NSDictionary *plainPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/plain",kSKPSMTPPartContentTypeKey,@"your comment text part",kSKPSMTPPartMessageKey,@"8bit",kSKPSMTPPartContentTransferEncodingKey,nil];
+    
+    //NSString *vcfPath = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
+    
+    NSData *vcfData = videodata;
+    
+    NSDictionary *vcfPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/directory;\r\n\tx-unix-mode=0644;\r\n\tname=\"video.mp4\"",kSKPSMTPPartContentTypeKey,@"attachment;\r\n\tfilename=\"video.mp4\"",kSKPSMTPPartContentDispositionKey,[vcfData encodeBase64ForData],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];
+    
+    testMsg.parts = [NSArray arrayWithObjects:plainPart,vcfPart,nil];
+    
+    [testMsg send];
+}
+
+- (void)messageFailed:(SKPSMTPMessage *)message error:(NSError *)error
+{
+    
+}
+
+- (void)messageSent:(SKPSMTPMessage *)message
+{
+    
 }
 
 @end

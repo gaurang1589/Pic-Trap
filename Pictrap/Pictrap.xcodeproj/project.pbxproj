@@ -32,6 +32,12 @@
 		EA3DAEA71925484800D6C2BB /* phone_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DAEA51925484800D6C2BB /* phone_icon@2x.png */; };
 		EA3DAEA91925509900D6C2BB /* mike_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA3DAEA81925509900D6C2BB /* mike_icon@2x.png */; };
 		EA3DAF601925662900D6C2BB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3DAF5F1925662900D6C2BB /* MapKit.framework */; };
+		EA4A4C72196ECC3200280F6E /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C6A196ECC3200280F6E /* NSBubbleData.m */; };
+		EA4A4C73196ECC3200280F6E /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C6C196ECC3200280F6E /* NSData+Base64Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA4A4C74196ECC3200280F6E /* NSStream+SKPSMTPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C6E196ECC3200280F6E /* NSStream+SKPSMTPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA4A4C75196ECC3200280F6E /* SKPSMTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C71196ECC3200280F6E /* SKPSMTPMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA4A4C78196ECCE900280F6E /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C77196ECCE900280F6E /* Base64Transcoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA4A4C7B196ECD0800280F6E /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4A4C7A196ECD0800280F6E /* HSK_CFUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EA67B7B51925DA2300DB1979 /* THCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA67B7B41925DA2300DB1979 /* THCircularProgressView.m */; };
 		EA8B0A79192649BA00049B4A /* Lato-Bla.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA8B0A74192649BA00049B4A /* Lato-Bla.ttf */; };
 		EA8B0A7A192649BA00049B4A /* Lato-Bol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA8B0A75192649BA00049B4A /* Lato-Bol.ttf */; };
@@ -155,6 +161,18 @@
 		EA3DAEA51925484800D6C2BB /* phone_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_icon@2x.png"; sourceTree = "<group>"; };
 		EA3DAEA81925509900D6C2BB /* mike_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mike_icon@2x.png"; sourceTree = "<group>"; };
 		EA3DAF5F1925662900D6C2BB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EA4A4C69196ECC3200280F6E /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBubbleData.h; sourceTree = "<group>"; };
+		EA4A4C6A196ECC3200280F6E /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBubbleData.m; sourceTree = "<group>"; };
+		EA4A4C6B196ECC3200280F6E /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		EA4A4C6C196ECC3200280F6E /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		EA4A4C6D196ECC3200280F6E /* NSStream+SKPSMTPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+SKPSMTPExtensions.h"; sourceTree = "<group>"; };
+		EA4A4C6E196ECC3200280F6E /* NSStream+SKPSMTPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+SKPSMTPExtensions.m"; sourceTree = "<group>"; };
+		EA4A4C70196ECC3200280F6E /* SKPSMTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPSMTPMessage.h; sourceTree = "<group>"; };
+		EA4A4C71196ECC3200280F6E /* SKPSMTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPSMTPMessage.m; sourceTree = "<group>"; };
+		EA4A4C76196ECCE900280F6E /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		EA4A4C77196ECCE900280F6E /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Transcoder.m; sourceTree = "<group>"; };
+		EA4A4C79196ECD0800280F6E /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
+		EA4A4C7A196ECD0800280F6E /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
 		EA67B7B31925DA2300DB1979 /* THCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THCircularProgressView.h; sourceTree = "<group>"; };
 		EA67B7B41925DA2300DB1979 /* THCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THCircularProgressView.m; sourceTree = "<group>"; };
 		EA8B0A74192649BA00049B4A /* Lato-Bla.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bla.ttf"; sourceTree = "<group>"; };
@@ -395,6 +413,41 @@
 			path = customComponent/TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		EA4A4C67196ECC3200280F6E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A4C68196ECC3200280F6E /* encoders */,
+				EA4A4C6F196ECC3200280F6E /* skp smtp message */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EA4A4C68196ECC3200280F6E /* encoders */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A4C79196ECD0800280F6E /* HSK_CFUtilities.h */,
+				EA4A4C7A196ECD0800280F6E /* HSK_CFUtilities.m */,
+				EA4A4C76196ECCE900280F6E /* Base64Transcoder.h */,
+				EA4A4C77196ECCE900280F6E /* Base64Transcoder.m */,
+				EA4A4C69196ECC3200280F6E /* NSBubbleData.h */,
+				EA4A4C6A196ECC3200280F6E /* NSBubbleData.m */,
+				EA4A4C6B196ECC3200280F6E /* NSData+Base64Additions.h */,
+				EA4A4C6C196ECC3200280F6E /* NSData+Base64Additions.m */,
+				EA4A4C6D196ECC3200280F6E /* NSStream+SKPSMTPExtensions.h */,
+				EA4A4C6E196ECC3200280F6E /* NSStream+SKPSMTPExtensions.m */,
+			);
+			path = encoders;
+			sourceTree = "<group>";
+		};
+		EA4A4C6F196ECC3200280F6E /* skp smtp message */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A4C70196ECC3200280F6E /* SKPSMTPMessage.h */,
+				EA4A4C71196ECC3200280F6E /* SKPSMTPMessage.m */,
+			);
+			path = "skp smtp message";
+			sourceTree = "<group>";
+		};
 		EA67B7B21925DA2300DB1979 /* THCircularProgressView */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +557,7 @@
 		EABB1B4F1912B59300C96AD9 /* Pictrap */ = {
 			isa = PBXGroup;
 			children = (
+				EA4A4C67196ECC3200280F6E /* lib */,
 				EABB1B581912B59300C96AD9 /* AppDelegate.h */,
 				EABB1B591912B59300C96AD9 /* AppDelegate.m */,
 				EABB1B5B1912B59300C96AD9 /* Main.storyboard */,
@@ -767,17 +821,23 @@
 				EA0D232F194CA585000AF3D1 /* MainViewController.m in Sources */,
 				EA0D232A194CA585000AF3D1 /* chatViewController.m in Sources */,
 				EABB1B5A1912B59300C96AD9 /* AppDelegate.m in Sources */,
+				EA4A4C73196ECC3200280F6E /* NSData+Base64Additions.m in Sources */,
 				EAC8391D1927D5DA00E9E155 /* AMBubbleGlobals.m in Sources */,
+				EA4A4C75196ECC3200280F6E /* SKPSMTPMessage.m in Sources */,
 				EA0D2329194CA585000AF3D1 /* AMViewController.m in Sources */,
+				EA4A4C74196ECC3200280F6E /* NSStream+SKPSMTPExtensions.m in Sources */,
 				EAC8391B1927D5DA00E9E155 /* AMBubbleAccessoryView.m in Sources */,
 				EAC8391F1927D5DA00E9E155 /* AMBubbleTableViewController.m in Sources */,
 				EA3DAEA2192544B200D6C2BB /* TPKeyboardAvoidingScrollView.m in Sources */,
 				EA0D232E194CA585000AF3D1 /* EmptySegue.m in Sources */,
+				EA4A4C72196ECC3200280F6E /* NSBubbleData.m in Sources */,
 				EABB1B561912B59300C96AD9 /* main.m in Sources */,
 				EA3DAEA3192544B200D6C2BB /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				EA4A4C7B196ECD0800280F6E /* HSK_CFUtilities.m in Sources */,
 				EAC8391C1927D5DA00E9E155 /* AMBubbleFlatAccessoryView.m in Sources */,
 				EAC8391E1927D5DA00E9E155 /* AMBubbleTableCell.m in Sources */,
 				EA0D2333194CA69D000AF3D1 /* SettingTableViewController.m in Sources */,
+				EA4A4C78196ECCE900280F6E /* Base64Transcoder.m in Sources */,
 				EA0D2327194CA585000AF3D1 /* homeViewController.m in Sources */,
 				EA0D232C194CA585000AF3D1 /* tabBarViewController.m in Sources */,
 				EA0D2328194CA585000AF3D1 /* locationViewController.m in Sources */,
